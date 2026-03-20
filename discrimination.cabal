@@ -57,9 +57,12 @@ library
     build-depends: semigroups >= 0.18.5 && < 1
 
   if impl(ghc >= 9.0)
-    build-depends: ghc-bignum >= 1.0 && < 1.4
+    build-depends: ghc-bignum >= 1.0 && < 1.5
   else
-    build-depends: integer-gmp >= 1.0 && < 1.1
+    build-depends: integer-gmp >= 1.0 && < 1.2
+
+  if impl(ghc < 9.4)
+    build-depends: transformers  >= 0.4.2.0 && < 0.7
 
 test-suite properties
   type:             exitcode-stdio-1.0
