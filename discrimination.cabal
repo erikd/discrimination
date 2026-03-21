@@ -56,7 +56,7 @@ library
   if !impl(ghc >=8.0)
     build-depends: semigroups >= 0.18.5 && < 1
 
-  if impl(ghc >= 9.0)
+  if impl(ghc >= 9.0) && !impl(ghc >= 9.14)
     build-depends: ghc-bignum >= 1.0 && < 1.5
   else
     build-depends: integer-gmp >= 1.0 && < 1.2
